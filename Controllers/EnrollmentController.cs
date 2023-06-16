@@ -1,5 +1,6 @@
 ﻿using Equb.Dtos;
 using Equb.Interfaces.Services;
+using Equb.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Equb.Controllers
@@ -20,6 +21,13 @@ namespace Equb.Controllers
         {
             await _enrollmentService.Create(enrollment);
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("/api/Enrollment/GetByEqubId")]
+        public async Task<ActionResult<List<Enrollment>>> GetEnrollmentsByEqubId(int equbId)
+        {
+            return await _enrollmentService.GetEnrollmentsByEqubId(equbId);
         }
     }
 }

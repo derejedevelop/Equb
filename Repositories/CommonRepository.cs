@@ -20,5 +20,10 @@ namespace Equb.Repositories
         {
             return await _context.SaveChangesAsync() > 0;
         }
+
+        public void Update<T>(T entity) where T : class
+        {
+            _context.Update(entity);
+        }
     }
 }
