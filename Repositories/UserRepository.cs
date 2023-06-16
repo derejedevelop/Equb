@@ -20,9 +20,14 @@ namespace Equb.Repositories
             _context.Add(entity);
         }
 
-        public async Task<Users> GetUser(int id)
-        { 
+        public async Task<Users> GetUserByUserId(int id)
+        {
             return await _context.Users.Where(x => x.UsersId == id).FirstOrDefaultAsync();
+        }
+
+        public async Task<Users> GetUserByUserName(string userName)
+        { 
+            return await _context.Users.Where(x => x.UserName.ToLower() == userName.ToLower()).FirstOrDefaultAsync();
         }
 
         public async Task<bool> SaveAll()

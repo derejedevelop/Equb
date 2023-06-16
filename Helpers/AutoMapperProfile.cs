@@ -13,6 +13,7 @@ namespace Equb.Helpers
             CreateMap<MemberInviteDto, MemberInvite>();
             CreateMap<EnrollmentCreateDto, Enrollment>();
             CreateMap<Users, UserBasicDto>();
+            CreateMap<InvitationAcceptedDto, MemberInvite>();
         }
     }
 }

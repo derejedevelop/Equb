@@ -26,6 +26,7 @@ services.AddScoped<IMemberInviteRepository, MemberInviteRepository>();
 services.AddScoped<IMemberInviteService, MemberInviteService>();
 services.AddScoped<ICommonRepository, CommonRepository>();
 services.AddScoped<IEnrollmentService, EnrollmentService>();
+services.AddScoped<IEnrollmentRepository, EnrollmentRepository>();
 
 var mapperConfig = new MapperConfiguration(mc =>
 {
