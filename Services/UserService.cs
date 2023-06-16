@@ -27,9 +27,14 @@ namespace Equb.Services
             await _commonRepository.SaveAll();
         }
 
-        public async Task<UserBasicDto> GetUser(int userId)
+        public async Task<UserBasicDto> GetUserByUserId(int id)
         {
-            return _mapper.Map<UserBasicDto>(await _userRepository.GetUser(userId));
+            return _mapper.Map<UserBasicDto>(await _userRepository.GetUserByUserId(id));
+        }
+
+        public async Task<UserBasicDto> GetUserByUserName(string userName)
+        {
+            return _mapper.Map<UserBasicDto>(await _userRepository.GetUserByUserName(userName));
         }
     }
 }

@@ -24,10 +24,17 @@ namespace Equb.Controllers
         }
 
         [HttpGet]
-        [Route("/api/Users/GetUser")]
-        public async Task<ActionResult<UserBasicDto>> GetUser(int userId)
+        [Route("/api/Users/GetUser/UserName")]
+        public async Task<ActionResult<UserBasicDto>> GetUser(string userName)
         {
-            return await _userService.GetUser(userId);
+            return await _userService.GetUserByUserName(userName);
+        }
+
+        [HttpGet]
+        [Route("/api/Users/GetUser/Id")]
+        public async Task<ActionResult<UserBasicDto>> GetUser(int id)
+        {
+            return await _userService.GetUserByUserId(id);
         }
     }
 }
