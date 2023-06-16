@@ -20,5 +20,14 @@ namespace Equb.Controllers
             await _memberInviteService.InviteMembers(equbId, inviterUserId, inviteeUsersId);
             return Ok();
         }
+
+
+        [HttpPut]
+        [Route("/api/Members/Reply")]
+        public async Task<ActionResult> InvitationAccepted(int invitationId, bool accepted)
+        {
+            await _memberInviteService.InvitationAccepted(invitationId, accepted);
+            return Ok();
+        }
     }
 }
