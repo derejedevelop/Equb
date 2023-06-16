@@ -1,5 +1,8 @@
 ﻿using Equb.Data;
 using Equb.Interfaces.Repositories;
+using Equb.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Equb.Repositories
 {
@@ -14,6 +17,16 @@ namespace Equb.Repositories
         public void Add<T>(T entity) where T : class
         {
             _context.Add(entity);
+        }
+
+        public async Task<List<EqubInfo>> GetEqubByAdminId(int adminId)
+        {
+            return await _context.EqubInfo.Where(x => x.AdminId == adminId).ToListAsync();
+        }
+
+        public async Task<EqubInfo> GetEqubByEqubId(int equbId)
+        {
+            return await _context.EqubInfo.Where(x => x.EqubInfoId == equbId).FirstOrDefaultAsync();
         }
 
         public async Task<bool> SaveAll()

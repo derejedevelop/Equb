@@ -1,5 +1,6 @@
 ﻿using Equb.Dtos;
 using Equb.Interfaces.Services;
+using Equb.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Equb.Controllers
@@ -21,6 +22,20 @@ namespace Equb.Controllers
         {
             await _equbService.Create(equb);
             return Ok();
+        }
+
+        [HttpGet]
+        [Route("/api/EqubInfo/GetByAdmin")]
+        public async Task<ActionResult<List<EqubInfo>>> GetEqubByAdmin(int adminId)
+        {
+            return await _equbService.GetEqubListByAdmin(adminId);
+        }
+
+        [HttpGet]
+        [Route("/api/EqubInfo/GetById")]
+        public async Task<EqubInfo> GetEqubByID(int equbId)
+        {
+            return await _equbService.GetEqubByEqubId(equbId);
         }
     }
 }

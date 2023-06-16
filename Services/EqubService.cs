@@ -26,5 +26,15 @@ namespace Equb.Services
             _commonRepository.Add(newEqub);
             await _commonRepository.SaveAll();
         }
+
+        public async Task<EqubInfo> GetEqubByEqubId(int equbId)
+        {
+            return await _equbRepository.GetEqubByEqubId(equbId);
+        }
+
+        public async Task<List<EqubInfo>> GetEqubListByAdmin(int adminId)
+        {
+            return await _equbRepository.GetEqubByAdminId(adminId);
+        }
     }
 }
