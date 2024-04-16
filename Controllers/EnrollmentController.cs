@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Equb.Controllers
 {
+    //Testing the pipeline trigger setup
     [ApiController]
     [Route("api/[controller]")]
     public class EnrollmentController : ControllerBase
