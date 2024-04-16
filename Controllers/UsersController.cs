@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Equb.Controllers
 {
-    //Update user controller for pipeline testing
+    //Pipeline trigger test
     [ApiController]
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
